@@ -1,0 +1,24 @@
+<mat-card class="bmi-container">
+    <h2>Angular BMI Calculator</h2>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Height (in centimeters)</mat-label>
+      <input matInput type="number" [(ngModel)]="heightCm" step="1" min="0" />
+    </mat-form-field>
+  
+
+    <mat-form-field appearance="outline">
+      <mat-label>Weight (in kilograms)</mat-label>
+      <input matInput type="number" [(ngModel)]="weight" step="0.1" min="0" />
+    </mat-form-field>
+  
+
+    <button mat-raised-button color="primary" (click)="calculateBMI()">Calculate</button>
+  
+
+    <div *ngIf="bmi !== null">
+      <p>Your BMI: <strong>{{ bmi.toFixed(2) }}</strong></p>
+      <p>Category: <strong>{{ category }}</strong></p>
+    </div>
+  </mat-card>
+
